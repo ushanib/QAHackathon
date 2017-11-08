@@ -67,6 +67,8 @@
         <hr />
          <a href="usermgt.jsp"> User Administration</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.jsp">Role Administration</a><br/>
                  <hr/>
+                 <form id="form1" action="userroleview" method="post">  <a href="javascript:;" onclick="document.getElementById('form1').submit();">View Users</a> <input type="hidden" name="view" value="View Users"/>
+                 </form>
         <h2>An error has occurred. Please check IAM server backend to view the error.</h2>
         <hr/>
     </div>

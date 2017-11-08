@@ -125,8 +125,6 @@
             %>
                     <h2> Hello! <%=subjectId%></h2>
 
-                   <h2> Hello!  <%= session.getAttribute("authorization") %></h2>
-
 
 
             <%
@@ -136,7 +134,9 @@
             <%
                 }
             %>
-             <a href="usermgt.jsp"> User Administration</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.jsp">Role Administration</a><br/>
+
+  <a href="usermgt.jsp"> User Administration</a>&nbsp;&nbsp; <form id="form1" action="userroleview" method="post">  <a href="javascript:;" onclick="document.getElementById('form1').submit();">View Users</a> <input type="hidden" name="view" value="View Users"/>
+</form> 
 
                 <h2>Add New Roles</h2>
 
@@ -147,12 +147,15 @@
                 <h2>Input details to add the new User Role </h2>
                 Role Name : <input type="text" name="roleName" id="roleName"/>
                  <br/>
+                  <br/>
                 User List : <input type="text" name="users" id="users"/>
+                                  <br/>
                                   <br/>
                 Permission : <input type="text" name="permission" id="permission">
                   <br/>
+                   <br/>
                   <input type="hidden" id="authorization" name="authorization" value="<%=session.getAttribute("authorization")%>" />
-
+                 <br/>
                 <input type="submit" value="Save"/>
             </form>
              </div>

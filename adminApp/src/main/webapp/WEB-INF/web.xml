@@ -38,7 +38,12 @@
         <servlet-class>org.wso2.sample.is.sso.agent.AdminUserManagerServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet-mapping>
+    <servlet>
+        <servlet-name>AdminUserRolesViewServlet</servlet-name>
+        <servlet-class>org.wso2.sample.is.sso.agent.AdminUserRolesViewServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+        <servlet-mapping>
         <servlet-name>ForwardingServlet</servlet-name>
         <url-pattern>/samlsso</url-pattern>
     </servlet-mapping>
@@ -61,6 +66,10 @@
     <servlet-mapping>
         <servlet-name>AdminUserManagerServlet</servlet-name>
         <url-pattern>/usersubmit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminUserRolesViewServlet</servlet-name>
+        <url-pattern>/userroleview</url-pattern>
     </servlet-mapping>
 
     <filter>

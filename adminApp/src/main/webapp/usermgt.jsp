@@ -135,8 +135,8 @@
             <%
                 }
             %>
-          <a href="usermgt.jsp"> User Administration</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.jsp">Role Administration</a><br/>
-
+      <a href="home.jsp">Role Administration</a>&nbsp;&nbsp; <form id="form1" action="userroleview" method="post">  <a href="javascript:;" onclick="document.getElementById('form1').submit();">View Users</a> <input type="hidden" name="view" value="View Users"/>
+</form>
                 <h2>Add New Users</h2>
 
              <div class="product-box">

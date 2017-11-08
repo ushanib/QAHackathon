@@ -16,6 +16,7 @@
 ~ under the License.
 -->
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="org.wso2.carbon.identity.sso.agent.bean.LoggedInSessionBean" %>
@@ -129,20 +130,66 @@
                 }
             %>
             <a href="usermgt.jsp"> User Administration</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.jsp">Role Administration</a><br/>
-            <form id="form1" action="userroleview" method="post">  <a href="javascript:;" onclick="document.getElementById('form1').submit();">View Users</a> <input type="hidden" name="view" value="View Users"/>
-            </form>
-                <h2>Record added successfully</h2>
+
+
+                <h2>Existing Users in the System</h2>
+
+
+
+      <form method="post" action="deleteUser">          
+                   
+ <table>
+
+<tr>
+      <td></td>
+     <td><h3>Select User</h3> </td>
+      <td></td>
+      <td><h3>Username</h3></td>
+</tr>
+
+
+ 
+<%
+ 
+ List<String> names = new ArrayList<String>();
+  names = (List<String>) request.getAttribute("users");
+int i =1;
+
+  for (String name: names) {   
+     
+
+
+%>
+ 
+
+ <tr> 
+  
+       <td><%=i%></td>
+
+        <td> <input type="checkbox" name="<%=name%>" value="<%=name%>"> </td>
+         <td></td>
+
+
+    <td><%=name%></td>
+  </tr>
+
+             <%
+    i+=1;
+}%>
+
+<tr>
+<td></td>
+<td>
+</td>
+<td></td>
+</tr>
+ </table>
+<input type="submit" value="Delete"/>
+
 
              <div class="product-box">
 
- <div class="product-box">
-            <form method="post" action="userroleview">
 
-
-                <h2>Input details to add the new User Role </h2>
-                              <input type="submit" value="View Users"/>
-            </form>
-             </div>
                <table>
                 <%
                     if(saml2SSOAttributes != null){
